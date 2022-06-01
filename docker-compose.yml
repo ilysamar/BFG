@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+  test_app_webapp_1:
+    image: ilysamar/webapp:3.10
+    hostname: test_app_webapp_1
+    ports:
+      - "8888:8080"
+    depends_on:
+      - test_app_db_1
+  test_app_db_1:
+    image: postgres:10
+    hostname: test_app_db_1
+    env_file: .env
+#    environment:
+#      - POSTGRES_USER=***REMOVED***
+#      - POSTGRES_PASSWORD=***REMOVED***
+#      - POSTGRES_DB=testdb
+    ports:
+      - 5555:5432
