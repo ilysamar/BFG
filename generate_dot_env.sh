@@ -28,6 +28,5 @@ echo "POSTGRES_HOST = \"test_app_db_1\"" | tee -a .env
 echo "POSTGRES_PORT = \"5432\"" | tee -a .env
 echo "POSTGRES_DB = \"testdb\"" | tee -a .env
 
-mkdir "folder"
 cp .env app/
 
