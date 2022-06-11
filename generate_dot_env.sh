@@ -10,9 +10,9 @@ done
 SYMBOLS=$SYMBOLS'!@#$%&*()?/\[]{}-+_=<>.,'
 
 
-# Generate ***REMOVED***name
+# Generate username
 for (( i=1; i <= 8; i++ )); do
-***REMOVED***=$***REMOVED***${SYMBOLS:$(expr $RANDOM % ${#SYMBOLS}):1}
+usr=$usr${SYMBOLS:$(expr $RANDOM % ${#SYMBOLS}):1}
 done
 
 
@@ -22,7 +22,7 @@ pass=$pass${SYMBOLS:$(expr $RANDOM % ${#SYMBOLS}):1}
 done
 
 
-echo "POSTGRES_USER = \"***REMOVED***_$***REMOVED***\"" | tee .env
+echo "POSTGRES_USER = \"usr_$usr\"" | tee .env
 echo "POSTGRES_PASSWORD = \"$pass\"" | tee -a .env
 echo "POSTGRES_HOST = \"test_app_db_1\"" | tee -a .env
 echo "POSTGRES_PORT = \"5432\"" | tee -a .env

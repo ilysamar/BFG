@@ -8,8 +8,8 @@ from flask_sqlalchemy import SQLAlchemy
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
-connectionString = 'postgresql+psycopg2://{***REMOVED***}:{passwd}@{host}:{port}/{db}'.format(
-    ***REMOVED***=os.environ.get('POSTGRES_USER'),
+connectionString = 'postgresql+psycopg2://{usr}:{passwd}@{host}:{port}/{db}'.format(
+    usr=os.environ.get('POSTGRES_USER'),
     passwd=os.environ.get('POSTGRES_PASSWORD'),
     host=os.environ.get('POSTGRES_HOST'),
     port=os.environ.get('POSTGRES_PORT'),
